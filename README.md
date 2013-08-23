@@ -10,4 +10,4 @@
 
 # Author
 
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+Author:: Patrick H. McJury (<patrick.mcjury@macmillan.com>)

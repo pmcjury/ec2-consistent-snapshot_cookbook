@@ -3,26 +3,25 @@
 # Recipe:: default
 #
 
-include_recipe "yum::epel"
-include_recipe "xfs"
+include_recipe "yum::epel" if platform_family?("rhel")
+include_recipe "xfs" if node['ec2-consistent-snapshot']['filesystem'] == 'xfs'
 
-%w{
-  perl-Net-Amazon-EC2 perl-File-Slurp perl-DBI perl-DBD-MySQL perl-Net-SSLeay perl-IO-Socket-SSL perl-Time-HiRes
-  perl-DateTime perl-Params-Validate
-}.each do |p|
-  package p
+node["ec2-consistent-snapshot"]["pkgs"].each do |pkg|
+  package pkg
 end
 
-remote_file "/usr/bin/ec2-consistent-snapshot" do
-  source   "https://raw.github.com/alestic/ec2-consistent-snapshot/master/ec2-consistent-snapshot"
-  checksum "cd401d2e1aedf7c9d390e4bc50c08b7cebc631e709a9677c146800c06d42069a"
-  owner    "root"
-  group    "root"
+remote_file node["ec2-consistent-snapshot"]["file"] do
+  source   node["ec2-consistent-snapshot"]["src"]
+  checksum node["ec2-consistent-snapshot"]["checksum"]
+  owner    node["ec2-consistent-snapshot"]["user"]
+  group    node["ec2-consistent-snapshot"]["group"]
   mode     0700
+  action :create
 end
 
-template "/root/.awssecret" do
-  source "awssecret.erb"
+# maybe make a data bag
+template node["ec2-consistent-snapshot"]["aws_file"] do
+  source node["ec2-consistent-snapshot"]["aws_template"]
   variables({
     access_key_id: node['ec2-consistent-snapshot']['aws_access_key_id'],
     secret_access_key: node['ec2-consistent-snapshot']['aws_secret_access_key']

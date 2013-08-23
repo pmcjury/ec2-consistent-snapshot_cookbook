@@ -7,15 +7,13 @@ platforms:
     box: canonical-ubuntu-12.04
     box_url: http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-amd64-vagrant-disk1.box
     require_chef_omnibus: true
-- name: centos-6.3
+- name: centos-6.4
   driver_config:
-    box: opscode-centos-6.3
-    box_url: http://opscode-vm.s3.amazonaws.com/vagrant/opscode_centos-6.3_chef-11.2.0.box
+    box: opscode-centos-6.4
+    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_centos-6.4_provisionerless.box
 
 suites:
 - name: default
   run_list: ["recipe[ec2-consistent-snapshot]"]
   attributes: {}
-- name: lwrp
-  run_list: ["recipe[ec2-consistent-snapshot-test]"]
-  attributes: {}
+
