@@ -6,8 +6,8 @@ use_inline_resources
 
 action :create do
   template new_resource.path do
-    source "wrapper.erb"
-    cookbook "ec2-consistent-snapshot"
+    source 'wrapper.erb'
+    cookbook 'ec2-consistent-snapshot'
 
     variables({
       :region            => new_resource.region,
