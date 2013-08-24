@@ -10,6 +10,4 @@ depends 'yum'
 depends 'xfs'
 depends 'apt'
 
-supports %w{rhel debian}
-
 recipe 'ec2-consistent-snapshot::default', 'installs ec2-consistent-snapshot script https://github.com/alestic/ec2-consistent-snapshot'
