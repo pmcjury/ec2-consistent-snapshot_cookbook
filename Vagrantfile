@@ -80,7 +80,8 @@ Vagrant.configure("2") do |config|
     }
 
     chef.run_list = [
-        "recipe[ec2-consistent-snapshot::default]"
+        "recipe[ec2-consistent-snapshot::default]",
+        "minitest-handler"
     ]
   end
 end
