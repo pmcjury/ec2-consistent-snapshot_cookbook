@@ -1,10 +1,12 @@
-#!/usr/bin/env bash
-
 ec2-consistent-snapshot \
 --region <%= @region %> \
+<% if @mysql -%>
 --mysql \
+<% end %>
+<% if @mysql_username -%>
 --mysql-username=<%= @mysql_username %> \
---freeze-filesystem <%= @freeze_filesystem %> \
+<% end -%>
+--freeze-filesystem <%= @freeze_filesystem.join(' ') %> \
 <% if @mysql_socket -%>
 --mysql-socket=<%= @mysql_socket %> \
 <% end -%>
