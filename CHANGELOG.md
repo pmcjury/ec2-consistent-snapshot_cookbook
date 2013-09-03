@@ -3,10 +3,21 @@
 ## 0.1.1
 
 New:
+<<<<<<< HEAD
 * added attributes for cron command
 
 Changes:
 * removed LWRP ( making a new one in the future )
+=======
+* added lwrp script to generate a script of the ec2-consistent-snapshot command with all options. Use in in conjuneciton with cron_d lwrp in the ec2-consistent-snapshot::cron recipe
+* added attributes for lwrp
+* added tests for new lwrp script
+* added cron recipe and attributes
+
+Changes:
+* renamed lwrp to more appropriate name
+
+>>>>>>> cron_lwrp
 
 ## 0.1.0
 
