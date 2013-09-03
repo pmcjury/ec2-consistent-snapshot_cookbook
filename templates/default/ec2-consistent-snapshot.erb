@@ -1,13 +1,46 @@
+#!/usr/bin/env <%= @shell %>
+
+# <%= @name %> Created on <%= Time.now %> and managed by Chef. Changes will be overwritten on next run
 ec2-consistent-snapshot \
---region <%= @region %> \
 <% if @mysql -%>
 --mysql \
-<% end %>
-<% if @mysql_username -%>
---mysql-username=<%= @mysql_username %> \
+    <% %w{mysql_defaults_file mysql_host mysql_port mysql_socket mysql_username mysql_password mysql_master_status_file}.each do |mysql_option| 
+        v = instance_variable_get("@#{mysql_option}")
+        if v
+            o = mysql_option.tr('_', '-')        
+    -%>
+--<%= o %>=<%= v %> \
+        <% end -%>
+    <% end -%>
 <% end -%>
+<% if @mongo -%>
+--mongo \
+    <% %w{mongo_host mongo_port mongo_username mongo_password}.each do |mongo_option| 
+        v = instance_variable_get("@#{mongo_option}")
+        if v
+            o = mongo_option.tr('_', '-')        
+    -%>
+--<%= o %>=<%= v %> \
+        <% end -%>
+    <% end -%>
+<% end -%>
+<% %w{aws_access_key_id aws_secret_access_key aws_access_key_id_file aws_secret_access_key_file aws_credentials_file}.each do |aws_option| 
+        v = instance_variable_get("@#{aws_option}")
+        if v
+            o = aws_option.tr('_', '-')        
+    -%>
+--<%= o %>=<%= v %> \
+        <% end -%>
+    <% end -%>
+<% %w{snapshot_timeout lock_timeout lock_tries lock_sleep pre_freeze_command post_thaw_command}.each do |misc_option| 
+        v = instance_variable_get("@#{misc_option}")
+        if v
+            o = misc_option.tr('_', '-')        
+    -%>
+--<%= o %>=<%= v %> \
+        <% end -%>
+    <% end -%>
+--description "<%= @description %>"
+--region <%= @region %> \
 --freeze-filesystem <%= @freeze_filesystem.join(' ') %> \
-<% if @mysql_socket -%>
---mysql-socket=<%= @mysql_socket %> \
-<% end -%>
 <%= @volumes.join(' ') %>

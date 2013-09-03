@@ -1,5 +1,17 @@
 # ec2-consistent-snapshot_cookbook
 
+## 0.1.1
+
+New:
+* added lwrp script to generate a script of the ec2-consistent-snapshot command with all options. Use in in conjuneciton with cron_d lwrp in the ec2-consistent-snapshot::cron recipe
+* added attributes for lwrp
+* added tests for new lwrp script
+* added cron recipe and attributes
+
+Changes:
+* renamed lwrp to more appropriate name
+
+
 ## 0.1.0
 
 New:
@@ -19,6 +31,6 @@ Fixes
 * only install xfs if an attribute is set
 * changed all hardcoded values to attributes
 
-Chnages
+Changes
 
 * renamed LWRP to same as cookbook 

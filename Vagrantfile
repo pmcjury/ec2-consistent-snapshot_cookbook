@@ -77,12 +77,27 @@ Vagrant.configure("2") do |config|
         :server_root_password => 'rootpass',
         :server_debian_password => 'debpass',
         :server_repl_password => 'replpass'
+      },
+      'ec2-consistent-snapshot' => { 
+        :script => {
+          :mysql => true,
+          :socket => '/tmp/mysql.sock',
+          :freeze_filesystem => ['/vol'],
+          :aws_credentials_file => '/root/.awssecret',
+          :mysql_master_status_file => '/vol/mysql_status',
+          :mysql_host => 'localhost',
+          :mysql_username => 'snapshot',
+          :mysql_password => 'snap123',
+          :description => 'Prod dailey snapshot',
+          :volumes => ['vol-xxx']
+        }
       }
     }
 
     chef.run_list = [
         "recipe[ec2-consistent-snapshot::default]",
-        "minitest-handler"
+        "recipe[ec2-consistent-snapshot::cron]",
+        # "minitest-handler"
     ]
   end
 end
