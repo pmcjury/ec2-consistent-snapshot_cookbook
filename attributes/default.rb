@@ -25,3 +25,15 @@ else
   default['ec2-consistent-snapshot']['component'] = 'precise'
   default['ec2-consistent-snapshot']['pkgs'] = %w{ec2-consistent-snapshot}
 end
+
+default['ec2-consistent-snapshot']['cron']['minute']  = '3'
+default['ec2-consistent-snapshot']['cron']['hour']    = '3'
+default['ec2-consistent-snapshot']['cron']['day']     = '*'
+default['ec2-consistent-snapshot']['cron']['month']   = '*'
+default['ec2-consistent-snapshot']['cron']['weekday'] = '*'
+default['ec2-consistent-snapshot']['cron']['mailto']  = nil
+default['ec2-consistent-snapshot']['cron']['path']    = nil
+default['ec2-consistent-snapshot']['cron']['home']    = nil
+default['ec2-consistent-snapshot']['cron']['shell']   = nil
+default['ec2-consistent-snapshot']['cron']['command'] = nil
+default['ec2-consistent-snapshot']['cron']['user']    = 'root'

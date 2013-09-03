@@ -1,5 +1,13 @@
 # ec2-consistent-snapshot_cookbook
 
+## 0.1.1
+
+New:
+* added attributes for cron command
+
+Changes:
+* removed LWRP ( making a new one in the future )
+
 ## 0.1.0
 
 New:
@@ -19,6 +27,6 @@ Fixes
 * only install xfs if an attribute is set
 * changed all hardcoded values to attributes
 
-Chnages
+Changes
 
 * renamed LWRP to same as cookbook 

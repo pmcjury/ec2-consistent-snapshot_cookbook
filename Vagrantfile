@@ -77,12 +77,14 @@ Vagrant.configure("2") do |config|
         :server_root_password => 'rootpass',
         :server_debian_password => 'debpass',
         :server_repl_password => 'replpass'
-      }
+      },
+      'ec2-consistent-snapshot' => { :cron => { :command => '/ec2-consistent-snapshot --mysql' } }
     }
 
     chef.run_list = [
         "recipe[ec2-consistent-snapshot::default]",
-        "minitest-handler"
+        "recipe[ec2-consistent-snapshot::cron]",
+        #{}"minitest-handler"
     ]
   end
 end
