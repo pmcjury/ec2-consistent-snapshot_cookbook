@@ -3,7 +3,6 @@
 ## 0.1.1
 
 New:
-<<<<<<< HEAD
 * added attributes for cron command
 
 Changes:
@@ -16,8 +15,6 @@ Changes:
 
 Changes:
 * renamed lwrp to more appropriate name
-
->>>>>>> cron_lwrp
 
 ## 0.1.0
 
