@@ -36,3 +36,4 @@ default['ec2-consistent-snapshot']['cron']['path']    = nil
 default['ec2-consistent-snapshot']['cron']['home']    = nil
 default['ec2-consistent-snapshot']['cron']['shell']   = nil
 default['ec2-consistent-snapshot']['cron']['command'] = nil
+default['ec2-consistent-snapshot']['cron']['user']    = 'root'

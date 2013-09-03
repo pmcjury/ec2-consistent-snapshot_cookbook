@@ -9,5 +9,6 @@ version          '0.1.0'
 depends 'yum'
 depends 'xfs'
 depends 'apt'
+depends 'cron'
 
 recipe 'ec2-consistent-snapshot::default', 'installs ec2-consistent-snapshot script https://github.com/alestic/ec2-consistent-snapshot'
