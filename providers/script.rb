@@ -46,7 +46,6 @@ action :create do
                   :mysql => new_resource.mysql,
                   :mysql_defaults_file => new_resource.mysql_defaults_file,
                   :mysql_host => new_resource.mysql_host,
-                  :mysql_port => new_resource.mysql_port,
 
                   :mysql_socket => new_resource.mysql_socket,
                   :mysql_username => new_resource.mysql_username,

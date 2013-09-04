@@ -29,7 +29,6 @@ attribute :mongo_password, :kind_of => [String, NilClass], :default => nil
 attribute :mysql, :kind_of => [TrueClass, FalseClass], :default => true
 attribute :mysql_defaults_file, :kind_of => [String, NilClass],  :default => nil
 attribute :mysql_host, :kind_of => [String, NilClass], :default => nil
-attribute :mysql_port, :kind_of => [String, Integer, NilClass], :default => 3306
 
 attribute :mysql_socket, :kind_of => [String, NilClass], :default => nil
 attribute :mysql_username, :kind_of => [String, NilClass], :default => nil

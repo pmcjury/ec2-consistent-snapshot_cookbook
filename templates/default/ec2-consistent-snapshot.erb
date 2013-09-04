@@ -4,7 +4,7 @@
 ec2-consistent-snapshot \
 <% if @mysql -%>
 --mysql \
-    <% %w{mysql_defaults_file mysql_host mysql_port mysql_socket mysql_username mysql_password mysql_master_status_file}.each do |mysql_option| 
+    <% %w{mysql_defaults_file mysql_host mysql_socket mysql_username mysql_password mysql_master_status_file}.each do |mysql_option| 
         v = instance_variable_get("@#{mysql_option}")
         if v
             o = mysql_option.tr('_', '-')        

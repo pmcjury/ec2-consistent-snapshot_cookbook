@@ -1,5 +1,10 @@
 # ec2-consistent-snapshot_cookbook
 
+## 0.1.3
+
+### Fixes
+* removed unknown option mysql-port
+
 ## 0.1.2
 
 ### Fixes
