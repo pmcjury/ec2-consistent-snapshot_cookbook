@@ -1,16 +1,37 @@
 # ec2-consistent-snapshot_cookbook
 
+## 0.1.4
+
+### Fixes
+* fixed mysql_username in cron recipe
+* fixed description to include bash timestamp in template
+* added mailto to crontab
+
+## 0.1.3
+
+### Fixes
+* removed unknown option mysql-port
+
+## 0.1.2
+
+### Fixes
+* added a slash after the description option when generating the script fomr the LWRP
+
 ## 0.1.1
 
-New:
+### New:
+* added LWRP script to generate a script of the ec2-consistent-snapshot command with all options. Use in in conjuneciton with cron_d LWRP in the ec2-consistent-snapshot::cron recipe
 * added attributes for cron command
+* added tests for new LWRP script
+* added cron recipe and attributes
+* added attributes for LWRP
 
-Changes:
-* removed LWRP ( making a new one in the future )
+### Changes:
+* removed old LWRP 
 
 ## 0.1.0
 
-New:
+### New:
 
 * added chefspec
 * added minitest
@@ -21,12 +42,12 @@ New:
 * enabled support for ubuntu 12.04
 * enabled support for centos 6.4
 
-Fixes
+### Fixes
 
 * fixed meta data to be correct by giving it a name
 * only install xfs if an attribute is set
 * changed all hardcoded values to attributes
 
-Changes
+### Changes
 
 * renamed LWRP to same as cookbook 

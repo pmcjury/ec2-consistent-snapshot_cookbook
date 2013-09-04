@@ -25,15 +25,18 @@ else
   default['ec2-consistent-snapshot']['component'] = 'precise'
   default['ec2-consistent-snapshot']['pkgs'] = %w{ec2-consistent-snapshot}
 end
+default['ec2-consistent-snapshot']['script']['name'] = '/usr/local/bin/ebs-snapshot'
+default['ec2-consistent-snapshot']['script']['mysql'] = true
+default['ec2-consistent-snapshot']['script']['mysql_socket'] = nil
+default['ec2-consistent-snapshot']['script']['freeze_filesystem'] = []
+default['ec2-consistent-snapshot']['script']['aws_credentials_file'] = '/root/.awssecret'
+default['ec2-consistent-snapshot']['script']['mysql_master_status_file'] = nil
+default['ec2-consistent-snapshot']['script']['mysql_host'] = 'localhost'
+default['ec2-consistent-snapshot']['script']['mysql_username'] = nil
+default['ec2-consistent-snapshot']['script']['mysql_password'] = nil
+default['ec2-consistent-snapshot']['script']['description'] = 'Dailey snapshot'
+default['ec2-consistent-snapshot']['script']['volumes'] = []
 
-default['ec2-consistent-snapshot']['cron']['minute']  = '3'
-default['ec2-consistent-snapshot']['cron']['hour']    = '3'
-default['ec2-consistent-snapshot']['cron']['day']     = '*'
-default['ec2-consistent-snapshot']['cron']['month']   = '*'
-default['ec2-consistent-snapshot']['cron']['weekday'] = '*'
-default['ec2-consistent-snapshot']['cron']['mailto']  = nil
-default['ec2-consistent-snapshot']['cron']['path']    = nil
-default['ec2-consistent-snapshot']['cron']['home']    = nil
-default['ec2-consistent-snapshot']['cron']['shell']   = nil
-default['ec2-consistent-snapshot']['cron']['command'] = nil
-default['ec2-consistent-snapshot']['cron']['user']    = 'root'
+default['ec2-consistent-snapshot']['cron']['name'] = 'ec2-consistent-snapshot'
+default['ec2-consistent-snapshot']['cron']['minute'] = 33
+default['ec2-consistent-snapshot']['cron']['hour'] = 3
