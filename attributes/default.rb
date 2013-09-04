@@ -27,7 +27,7 @@ else
 end
 default['ec2-consistent-snapshot']['script']['name'] = '/usr/local/bin/ebs-snapshot'
 default['ec2-consistent-snapshot']['script']['mysql'] = true
-default['ec2-consistent-snapshot']['script']['socket'] = nil
+default['ec2-consistent-snapshot']['script']['mysql_socket'] = nil
 default['ec2-consistent-snapshot']['script']['freeze_filesystem'] = []
 default['ec2-consistent-snapshot']['script']['aws_credentials_file'] = '/root/.awssecret'
 default['ec2-consistent-snapshot']['script']['mysql_master_status_file'] = nil

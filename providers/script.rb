@@ -34,24 +34,20 @@ action :create do
                   :lock_sleep => new_resource.lock_sleep,
                   :pre_freeze_command => new_resource.pre_freeze_command,
                   :post_thaw_command => new_resource.post_thaw_command,
-
                   # mongo
                   :mongo => new_resource.mongo,
                   :mongo_host => new_resource.mongo_host,
                   :mongo_port => new_resource.mongo_port,
                   :mongo_username => new_resource.mongo_username,
                   :mongo_password => new_resource.mongo_password,
-
                   # mysql
                   :mysql => new_resource.mysql,
                   :mysql_defaults_file => new_resource.mysql_defaults_file,
                   :mysql_host => new_resource.mysql_host,
-
                   :mysql_socket => new_resource.mysql_socket,
                   :mysql_username => new_resource.mysql_username,
                   :mysql_password => new_resource.mysql_password,
                   :mysql_master_status_file => new_resource.mysql_master_status_file,
-
                   # aws keys
                   :aws_access_key_id => new_resource.aws_access_key_id,
                   :aws_secret_access_key => new_resource.aws_secret_access_key,

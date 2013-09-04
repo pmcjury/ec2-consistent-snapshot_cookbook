@@ -88,15 +88,15 @@ Vagrant.configure("2") do |config|
           :mysql_host => 'localhost',
           :mysql_username => 'snapshot',
           :mysql_password => 'snapshot123',
-          :description => "ProdSlave0 dailey snapshot $(date +'%Y-%m-%d %H:%M:%S')",
+          :description => "ProdSlave0 dailey snapshot",
           :volumes => ['vol-bbfde1e1']
         }
       }
     }
 
     chef.run_list = [
-      "recipe[ec2-consistent-snapshot::default]",
-      "recipe[ec2-consistent-snapshot::cron]",
+      # "recipe[ec2-consistent-snapshot::default]",
+      "recipe[ec2-consistent-snapshot::cron]"
       #{}"minitest-handler"
     ]
   end

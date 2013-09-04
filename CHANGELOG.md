@@ -1,5 +1,12 @@
 # ec2-consistent-snapshot_cookbook
 
+## 0.1.4
+
+### Fixes
+* fixed mysql_username in cron recipe
+* fixed description to include bash timestamp in template
+* added mailto to crontab
+
 ## 0.1.3
 
 ### Fixes
