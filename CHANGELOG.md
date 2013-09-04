@@ -1,5 +1,10 @@
 # ec2-consistent-snapshot_cookbook
 
+## 0.1.2
+
+### Fixes
+* added a slash after the description option when generating the script fomr the LWRP
+
 ## 0.1.1
 
 ### New:
