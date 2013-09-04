@@ -1,5 +1,10 @@
 # ec2-consistent-snapshot_cookbook
 
+## 0.1.5
+
+### Fixes
+* Fixed path in template file for ec2-consistent snapshot. Gave it an absolute path. I could have just set path in cron. It may be more portable
+
 ## 0.1.4
 
 ### Fixes
