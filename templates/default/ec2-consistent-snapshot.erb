@@ -40,7 +40,7 @@ ec2-consistent-snapshot \
 --<%= o %>=<%= v %> \
         <% end -%>
     <% end -%>
---description "<%= @description %>"
+--description "<%= @description %>" \
 --region <%= @region %> \
 --freeze-filesystem <%= @freeze_filesystem.join(' ') %> \
 <%= @volumes.join(' ') %>
