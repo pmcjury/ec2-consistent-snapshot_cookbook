@@ -40,3 +40,5 @@ default['ec2-consistent-snapshot']['script']['volumes'] = []
 default['ec2-consistent-snapshot']['cron']['name'] = 'ec2-consistent-snapshot'
 default['ec2-consistent-snapshot']['cron']['minute'] = 33
 default['ec2-consistent-snapshot']['cron']['hour'] = 3
+default['ec2-consistent-snapshot']['cron']['path'] = '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+default['ec2-consistent-snapshot']['cron']['mailto'] = nil

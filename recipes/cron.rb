@@ -18,9 +18,10 @@ script = ec2_consistent_snapshot_script node['ec2-consistent-snapshot']['script'
 end
 
 cron_d node['ec2-consistent-snapshot']['cron']['name'] do
-    minute node['ec2-consistent-snapshot']['cron']['minute']
-    hour node['ec2-consistent-snapshot']['cron']['hour']
-    command script.name
-    user node['ec2-consistent-snapshot']['user']
-    mailto node['ec2-consistent-snapshot']['mailto']
+  minute node['ec2-consistent-snapshot']['cron']['minute']
+  hour node['ec2-consistent-snapshot']['cron']['hour']
+  command script.name
+  user node['ec2-consistent-snapshot']['user']
+  mailto node['ec2-consistent-snapshot']['cron']['mailto']
+  path node['ec2-consistent-snapshot']['cron']['path']
 end
