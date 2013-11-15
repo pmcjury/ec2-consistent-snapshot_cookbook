@@ -1,58 +1,63 @@
-# ec2-consistent-snapshot_cookbook
+ec2-consistent-snapshot_cookbook CHANGELOG
+===============
 
-## 0.1.5
+v0.1.5
+------
+### Fixes
+- Fixed path in template file for ec2-consistent snapshot. Gave it an absolute path. I could have just set path in cron. It may be more portable
+
+v0.1.4
+------
+### Fixes
+- fixed mysql_username in cron recipe
+- fixed description to include bash timestamp in template
+- added mailto to crontab
+
+v0.1.3
+------
 
 ### Fixes
-* Fixed path in template file for ec2-consistent snapshot. Gave it an absolute path. I could have just set path in cron. It may be more portable
+- removed unknown option mysql-port
 
-## 0.1.4
-
-### Fixes
-* fixed mysql_username in cron recipe
-* fixed description to include bash timestamp in template
-* added mailto to crontab
-
-## 0.1.3
+v0.1.2
+------
 
 ### Fixes
-* removed unknown option mysql-port
+- added a slash after the description option when generating the script fomr the LWRP
 
-## 0.1.2
+v0.1.1
+------
 
-### Fixes
-* added a slash after the description option when generating the script fomr the LWRP
+### New
+- added LWRP script to generate a script of the ec2-consistent-snapshot command with all options. Use in in conjuneciton with cron_d LWRP in the ec2-consistent-snapshotcron recipe
+- added attributes for cron command
+- added tests for new LWRP script
+- added cron recipe and attributes
+- added attributes for LWRP
 
-## 0.1.1
+### Changes
+- removed old LWRP 
 
-### New:
-* added LWRP script to generate a script of the ec2-consistent-snapshot command with all options. Use in in conjuneciton with cron_d LWRP in the ec2-consistent-snapshot::cron recipe
-* added attributes for cron command
-* added tests for new LWRP script
-* added cron recipe and attributes
-* added attributes for LWRP
+v0.1.0
+------
 
-### Changes:
-* removed old LWRP 
+### New
 
-## 0.1.0
-
-### New:
-
-* added chefspec
-* added minitest
-* added foodcritic
-* added strainer
-* added berkshelf
-* added test kitchen
-* enabled support for ubuntu 12.04
-* enabled support for centos 6.4
+- added chefspec
+- added minitest
+- added foodcritic
+- added strainer
+- added berkshelf
+- added test kitchen
+- enabled support for ubuntu 12.04
+- enabled support for centos 6.4
 
 ### Fixes
 
-* fixed meta data to be correct by giving it a name
-* only install xfs if an attribute is set
-* changed all hardcoded values to attributes
+- fixed meta data to be correct by giving it a name
+- only install xfs if an attribute is set
+- changed all hardcoded values to attributes
 
 ### Changes
 
-* renamed LWRP to same as cookbook 
+- renamed LWRP to same as cookbook 
