@@ -20,7 +20,6 @@ when 'rhel'
 else
   default['ec2-consistent-snapshot']['repo_uri'] = 'http://ppa.launchpad.net/alestic/ppa/ubuntu'
   default['ec2-consistent-snapshot']['repo'] = 'ppa:alestic'
-  default['ec2-consistent-snapshot']['keyserver'] = 'keyserver.ubuntu.com'
   default['ec2-consistent-snapshot']['keyserver'] = 'BE09C571'
   default['ec2-consistent-snapshot']['component'] = 'precise'
   default['ec2-consistent-snapshot']['pkgs'] = %w{ec2-consistent-snapshot}
@@ -34,7 +33,7 @@ default['ec2-consistent-snapshot']['script']['mysql_master_status_file'] = nil
 default['ec2-consistent-snapshot']['script']['mysql_host'] = 'localhost'
 default['ec2-consistent-snapshot']['script']['mysql_username'] = nil
 default['ec2-consistent-snapshot']['script']['mysql_password'] = nil
-default['ec2-consistent-snapshot']['script']['description'] = 'Dailey snapshot'
+default['ec2-consistent-snapshot']['script']['description'] = 'dailey snapshot'
 default['ec2-consistent-snapshot']['script']['volumes'] = []
 
 default['ec2-consistent-snapshot']['cron']['name'] = 'ec2-consistent-snapshot'
