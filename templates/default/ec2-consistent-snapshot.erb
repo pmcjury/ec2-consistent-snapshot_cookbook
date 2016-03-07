@@ -1,7 +1,7 @@
 #!/usr/bin/env <%= @shell %>
 
 # <%= @name %> Created on <%= Time.now %> and managed by Chef. Changes will be overwritten on next run
-/usr/local/bin/ec2-consistent-snapshot \
+<%= node['ec2-consistent-snapshot']['file']%> \
 <% if @mysql -%>
 --mysql \
     <% %w{mysql_defaults_file mysql_host mysql_socket mysql_username mysql_password mysql_master_status_file}.each do |mysql_option| 
